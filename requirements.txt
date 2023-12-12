@@ -1,0 +1,10 @@
+fastapi==0.89.1
+uvicorn[standard]==0.20.0
+elastic-transport==8.4.1
+elasticsearch==8.10.0
+elasticsearch-dsl==8.9.0
+pandas==2.0.1
+pyarrow==12.0.0
+fastparquet==2023.4.0
+requests==2.29.0
+openai==0.28.1

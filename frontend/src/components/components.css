@@ -1,0 +1,79 @@
+.movie-card {
+    border-radius: 5px;
+    background-color: #1b1d24;
+    margin: 15px;
+}
+
+.movie-description-modal {
+    position: fixed;
+    background-color: #1b1d24;
+    padding: 15px;
+    border-radius: 5px;
+    top: 30%;
+    left: 30%;
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.x-icon {
+    text-align: right;
+    cursor: pointer;
+}
+
+.search-bar {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: #1b1d24;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.search-field {
+    width: 500px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: #282c34;
+    border-radius: 5px;
+    border-style: hidden;
+    padding: 12px;
+    margin: 16px;
+}
+
+.check-box-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 25px;
+}
+
+.check-box {
+    display: block;
+    height: 25px;
+    width: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+
+.select {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25px;
+    width: 75px;
+    background-color: #282c34;
+    color: white;
+    border-radius: 5px;
+}
+
+.did-you-mean button {
+    font-size: 16px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}

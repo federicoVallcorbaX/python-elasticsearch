@@ -1,0 +1,46 @@
+version: "3"
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/backend
+    env_file: .env
+    networks:
+      - backend-net
+    depends_on:
+      - elasticsearch
+      - embeddings-generator
+    stdin_open: true
+    tty: true
+  embeddings-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile-embeddings
+    volumes:
+      - ./embeddings_generator/embeddings_generator:/embeddings_generator/embeddings_generator
+    ports:
+      - 8080:8080
+    environment:
+      - EMBEDDINGS_GENERATOR_PATH=embeddings_generator
+    networks:
+      - backend-net
+  elasticsearch:
+    image: elasticsearch:8.10.2
+    ports:
+      - 9200:9200
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    networks:
+      - backend-net
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: "single-node"
+      xpack.security.enabled: "false"
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+
+volumes:
+  es-data:
+networks:
+  backend-net:
